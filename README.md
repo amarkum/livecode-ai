@@ -15,7 +15,37 @@ python -m livecode
 
 Open **http://127.0.0.1:5050/**
 
-Add an OpenAI or Gemini API key in the in-app **Settings** panel. Keys are stored locally at `~/livecode/settings.json` (not in this repo).
+## How to use
+
+### 1. Add an API key
+
+Before chatting with the agent, add at least one LLM provider key:
+
+1. Open Live Code in your browser.
+2. Click the **gear icon** (Settings) in the top-right of the chat panel.
+3. In **LLM Settings**, paste either:
+   - an **OpenAI** key (`sk-...`) from [platform.openai.com/api-keys](https://platform.openai.com/api-keys), or
+   - a **Gemini** key from [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
+4. Click **Save**. Live Code validates the key and stores it locally at `~/livecode/settings.json` (never in this repo).
+
+You can add both keys. If both are set, use the **model dropdown** next to the chat box to pick a provider/model, or choose **Auto** to let Live Code route requests.
+
+### 2. Open a project
+
+1. Click **Open Folder…** in the left sidebar (or the welcome screen).
+2. Choose a local project directory.
+3. The file explorer loads so the agent can read, search, edit, and run commands in that folder.
+
+### 3. Chat with the agent
+
+1. Type a task in the chat box at the bottom (for example: “Add a health check endpoint”).
+2. Pick a mode if needed:
+   - **Agent** — reads/edits files and runs commands
+   - **Plan** — drafts a plan before building
+   - **Ask** — answers questions without making changes
+3. Press **Enter** or click send. Approve shell commands when prompted.
+
+Recent projects and chat sessions are saved under `~/livecode/projects/`.
 
 ## Features
 
@@ -95,7 +125,7 @@ python -m pytest tests/ -q
 
 ## Contributing
 
-Issues and pull requests are welcome. Run the test suite before submitting changes.
+Issues and pull requests are welcome.
 
 ## Security
 
